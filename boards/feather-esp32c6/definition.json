@@ -1,7 +1,7 @@
 {
   "boardName": "feather-esp32c6",
   "mcuName": "esp32c6",
-  "mcuRefVoltage": 1.1,
+  "mcuRefVoltage": 2.5,
   "displayName": "Adafruit Feather ESP32-C6",
   "vendor": "Adafruit",
   "productURL": "https://www.adafruit.com/product/5933",
