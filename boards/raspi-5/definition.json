@@ -36,27 +36,27 @@
       },
       {
         "name": "D7",
-        "displayName": "D7",
+        "displayName": "D7 (SPI0 CE1)",
         "dataType": "bool"
       },
       {
         "name": "D8",
-        "displayName": "D8",
+        "displayName": "D8 (SPI0 CE0)",
         "dataType": "bool"
       },
       {
         "name": "D9",
-        "displayName": "D9",
+        "displayName": "D9 (SPI0 MISO)",
         "dataType": "bool"
       },
       {
         "name": "D10",
-        "displayName": "D10",
+        "displayName": "D10 (SPI0 MOSI)",
         "dataType": "bool"
       },
       {
         "name": "D11",
-        "displayName": "D11",
+        "displayName": "D11 (SPI0 SCK)",
         "dataType": "bool"
       },
       {
@@ -102,17 +102,17 @@
       },
       {
         "name": "D19",
-        "displayName": "D19",
+        "displayName": "D19 (SPI1 MISO)",
         "dataType": "bool"
       },
       {
         "name": "D20",
-        "displayName": "D20",
+        "displayName": "D20 (SPI1 MOSI)",
         "dataType": "bool"
       },
       {
         "name": "D21",
-        "displayName": "D21",
+        "displayName": "D21 (SPI1 SCK)",
         "dataType": "bool"
       },
       {
@@ -147,6 +147,12 @@
       }
     ],
     "analogPins": [],
-    "i2cPorts": []
+    "i2cPorts": [
+      {
+        "i2cPortId": 1,
+        "SDA": 2,
+        "SCL": 3
+      }
+    ]
   }
 }
