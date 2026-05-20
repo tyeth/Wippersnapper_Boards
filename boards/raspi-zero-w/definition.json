@@ -1,10 +1,10 @@
 {
-  "boardName": "raspi-5",
-  "mcuName": "bcm2712",
+  "boardName": "raspi-zero-w",
+  "mcuName": "bcm2835",
   "mcuRefVoltage": 3.3,
-  "displayName": "Raspberry Pi 5",
+  "displayName": "Raspberry Pi Zero W",
   "vendor": "Raspberry Pi",
-  "productURL": "https://www.adafruit.com/product/5813",
+  "productURL": "https://www.adafruit.com/product/3400",
   "documentationURL": "https://learn.adafruit.com/",
   "installMethod": "python",
   "components": {
