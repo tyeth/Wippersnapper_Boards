@@ -26,5 +26,3 @@ Temporary Items
 .apdisk
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#macOS
-.claude/settings.local.json
-worktree*/
