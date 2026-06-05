@@ -115,3 +115,11 @@ For concrete examples, see existing files such as:
 - `/boards/feather-esp32s3/magic.json`
 - `/boards/funhouse/magic.json`
 - `/boards/pyportal-tinyusb/magic.json`
+
+## Visualisations / UI Control Customisation
+
+Similar to the components repos component definition schema, it is possible to specify the User Interface controls / visual options for each component by using the `visualization` property. 
+
+This can allow icons and button labels to be better customised, as well as the choice of control type itself.
+
+See the [Pin](https://github.com/adafruit/Wippersnapper_Components#pin-visualization-types) & [PWM](https://github.com/adafruit/Wippersnapper_Components#pwm-visualization-types) visualization types in the readme, or [the examples](https://github.com/search?q=repo%3Aadafruit%2FWippersnapper_Components%20visualization&type=code), in the components repo.
