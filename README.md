@@ -79,4 +79,39 @@ Example hardware descriptions can be found in the `boards/` directory.
 
 # Automatic Configuration File - magic.json
 
-The magic.json file is a metadata file that provides information about the export of the board from Adafruit IO. It contains details about the board's on-board components such as sensors, actuators, LEDs, and other peripherals. This file is used by Adafruit IO to understand the capabilities of the board and how to interact with it.
+`magic.json` is an Adafruit IO export of a board's built-in component configuration (for example onboard buttons, LEDs, displays, and sensors). It is validated by `/boards/magic_schema.json` in this repository.
+
+For new or updated boards, **prefer configuring built-in components in Adafruit IO first, then exporting the generated `magic.json`**, instead of hand-authoring this file. This avoids schema drift and keeps component settings aligned with what Adafruit IO actually supports.
+
+## magic.json schema summary
+
+Top-level required fields:
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `exportVersion` | string | Version of the export format. |
+| `exportedBy` | string | Exporting vendor. Must be `"Adafruit"`. |
+| `exportedAt` | string | Timestamp when the file was exported. |
+| `exportedFromDevice` | object | Source board metadata for the export. |
+| `components` | array | Exhaustive list of built-in components and their settings. |
+
+`exportedFromDevice` requires:
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `board` | string | Board name the export came from. |
+| `firmwareVersion` | string | WipperSnapper firmware version at export time. |
+
+Each entry in `components` must include:
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `name` | string | Human-readable component name. |
+| `type` | string | WipperSnapper component type identifier. |
+
+Component entries then include one specific configuration shape (for example pin, I2C, PWM, pixel, DS18X20, UART, servo, or display), as defined by the `oneOf` variants in `/boards/magic_schema.json`.
+
+For concrete examples, see existing files such as:
+- `/boards/feather-esp32s3/magic.json`
+- `/boards/funhouse/magic.json`
+- `/boards/pyportal-tinyusb/magic.json`
