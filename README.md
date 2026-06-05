@@ -91,7 +91,7 @@ Top-level required fields:
 |----------|------|-------------|
 | `exportVersion` | string | Version of the export format. |
 | `exportedBy` | string | Exporting vendor. Must be `"Adafruit"`. |
-| `exportedAt` | string | Timestamp when the file was exported. |
+| `exportedAt` | string | Timestamp when the file was exported (typically an ISO 8601 UTC timestamp from Adafruit IO, e.g. `2023-11-13T19:41:29.465Z`). |
 | `exportedFromDevice` | object | Source board metadata for the export. |
 | `components` | array | Exhaustive list of built-in components and their settings. |
 
@@ -107,7 +107,7 @@ Each entry in `components` must include:
 | Property | Type | Description |
 |----------|------|-------------|
 | `name` | string | Human-readable component name. |
-| `type` | string | WipperSnapper component type identifier. |
+| `type` | string | WipperSnapper component type identifier (for example `push_button`, `dimmable_led`, `neopixel`, or `lc709203f:voltage`). |
 
 Component entries then include one specific configuration shape (for example pin, I2C, PWM, pixel, DS18X20, UART, servo, or display), as defined by the `oneOf` variants in `/boards/magic_schema.json`.
 
