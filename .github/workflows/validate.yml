@@ -52,10 +52,17 @@ jobs:
       - name: List Changed Board Files
         id: list-changed-files
         run: |
-          # also fetch main to diff against
-          git fetch --depth=1 origin main
+          # Diff against the PR's target branch so we only consider files this
+          # PR actually changed: api-v2 PRs diff against api-v2; anything else
+          # diffs against main.
+          if [ "${{ github.base_ref }}" = "api-v2" ]; then
+            DIFF_BASE=api-v2
+          else
+            DIFF_BASE=main
+          fi
+          git fetch --depth=1 origin "$DIFF_BASE"
           # list Added, Copied, Modified, and Renamed files
-          ACMR_FILES=`git diff origin/main --name-only --diff-filter=ACMR | xargs`
+          ACMR_FILES=`git diff "origin/$DIFF_BASE" --name-only --diff-filter=ACMR | xargs`
           # GitHub Actions output ritual
           echo "all_changed_files=$ACMR_FILES" >> "$GITHUB_OUTPUT"
 
