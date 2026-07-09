@@ -12,13 +12,15 @@
       "digitalPins": [
         {
             "name": "SCK",
-            "displayName": "D0 (SCK)",
-            "dataType": "bool"
+            "displayName": "D0 (SCK/UART TX)",
+            "dataType": "bool",
+            "uartTx": true
         },
         {
             "name": "MOSI",
-            "displayName": "D1 (MOSI)",
-            "dataType": "bool"
+            "displayName": "D1 (MOSI/UART RX)",
+            "dataType": "bool",
+            "uartRx": true
         },
         {
             "name": "MISO",
@@ -27,13 +29,15 @@
         },
         {
             "name": "SCL",
-            "displayName": "D0 (SCL)",
-            "dataType": "bool"
+            "displayName": "D0 (SCL/UART TX)",
+            "dataType": "bool",
+            "uartTx": true
         },
         {
             "name": "SDA",
-            "displayName": "D1 (SDA)",
-            "dataType": "bool"
+            "displayName": "D1 (SDA/UART RX)",
+            "dataType": "bool",
+            "uartRx": true
         },
         {
             "name": "D4",
